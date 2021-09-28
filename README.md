@@ -1,3 +1,5 @@
-# Android project proposal starter
+# Marble Maze
 
-This is a project template for all phases&mdash;from proposal to final delivery&mdash;of the personal Android project in the [Deep Dive Coding](https://deepdivecoding.com/) [Java + Android bootcamp](https://deepdivecoding.com/java-android/).
+
+
+    Tilt the device to maneuver a marble through a randomly generated maze. The time required to get the marble to the exit is stored in a database for later display in a score summary screen. More difficult levels have larger mazes.
