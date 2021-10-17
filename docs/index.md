@@ -1,34 +1,35 @@
-## Summary
-Marble maze is a campaign of increasingly diffifult tilt-the-ball games that work with devices motion sensory. It also features a spine-chilling dramatic story.
+## Project Description
 
-Tilt the device to maneuver a marble through a randomly generated maze. The time required to get the marble to the exit is stored in a database for later display in a score summary screen. More difficult levels have larger mazes.
+Marble maze is a game featuring tilt controls. Roll your Marble through increasingly challenging mazes. Choose your comfortable difficulty, or try creating your own with Freeplay mode. Roll fast for the high score spot, and play often for daily marbles!
+
+## Intended Functionality
+
+* Randomized Mazes-Every play will generate a new maze.
+
+* Difficulties-Easy/Medium/Hard difficulties that generate mazes with varying sizes based on the predefined parameters.
+
+* Freeplay mode-Allows the user to set their own maze parameters and create mazes as big or small as they like.
+
+* Daily Marble Unlocks-Every 24 hours the user unlocks a new marble they can use. Drawn from a texture API.
 
 ## Intended users
 
-* A Protective Parent
-> As a protective parent teaching my kid in this modern world, I want to enjoy a safe and fun library of engaging games for my child's development.
+* As a parent who wants to entertain my child, I want a safe entertaining app so that my child can safely enjoy her tablet.
 
-* A explorative teacher
-> As a teacher continuously browsing options for my class, I would like to introduce modern versions of classic games for my class's recess.
+* As a teacher who wants to entertain my class in modern ways, I want entertaining games so that I can preinstall them on school laptops.
 
-## Functionality
+* As a Childcare giver, I want an app that I can trust for my client's kids to use so that I can be sure they're not abusing their technology.
 
-* The game will feature tilt controls that can detect a device's motion.
-* The game will feature a campaign of increasingly difficult levels challenging the user.
-* The game will feature power up and game-altering effects.
-* The game will have a High scoreboard and settings options.
+## Wireframe Diagram
 
-## Persistent data
- 
-* Campaign Progress
-* Saved settings
-* Internal Clock
+## Entity-Relationship Diagram
 
 ## Device/external services
 
-* Mobile android device that has motion sensor.
+* Texture (Java 3D API)
 
-## Stretch goals/possible enhancements 
+URL: "https://docs.oracle.com/cd/E17802_01/j2se/javase/technologies/desktop/java3d/forDevelopers/J3D_1_3_API/j3dapi/javax/media/j3d/Texture.html"
 
-* I would like for the game to feature a daily unlockable gained by opening the app every 24 hours.
-* I would like to implement a mock storyline to get more practice with the code and to make the campaign more enjoyable.
+My app will unlock a random texture for the player to use on their marble in reward for opening the app every 24 hours.
+
+My app will have an on-device default texture and be able to function 24/7 without access to this service.
