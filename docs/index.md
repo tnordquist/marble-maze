@@ -26,7 +26,7 @@ Marble maze is a game featuring tilt controls. Roll your Marble through increasi
 
 ## Entity-Relationship Diagram
 
-
+[![Erd Diagram](images/erd.svg)](pdf/erd.pdf)
 
 ## Device/external services
 
