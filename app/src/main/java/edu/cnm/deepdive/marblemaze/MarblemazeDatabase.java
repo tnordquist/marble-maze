@@ -8,7 +8,6 @@ import androidx.room.TypeConverter;
 import androidx.room.TypeConverters;
 import edu.cnm.deepdive.marblemaze.MarblemazeDatabase.Converters;
 import edu.cnm.deepdive.marblemaze.model.dao.GameDao;
-import edu.cnm.deepdive.marblemaze.model.dao.MarbleDao;
 import java.util.Date;
 
 @Database(
