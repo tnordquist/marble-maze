@@ -28,53 +28,40 @@ public class Game {
 
 
   @ColumnInfo(index = true)
-  private Difficulty difficulty;
+  private int Size;
+  private int speed;
+  private int time;
+  private int completed;
 
-  public long getId() {
-    return id;
+  public int getSize() {
+    return Size;
   }
 
-  public void setId(long id) {
-    this.id = id;
+  public void setSize(int size) {
+    Size = size;
   }
 
-  @NonNull
-  public Date getCreated() {
-    return created;
+  public int getSpeed() {
+    return speed;
   }
 
-  public void setCreated(@NonNull Date created) {
-    this.created = created;
+  public void setSpeed(int speed) {
+    this.speed = speed;
   }
 
-  public Difficulty getDifficulty() {
-    return difficulty;
+  public int getTime() {
+    return time;
   }
 
-  public void setDifficulty(Difficulty difficulty) {
-    this.difficulty = difficulty;
+  public void setTime(int time) {
+    this.time = time;
   }
 
-
-  public enum Difficulty {
-    EASY,
-    MEDIUM,
-    HARD;
-
-    @TypeConverter
-    public static Integer difficultyToInteger(Difficulty difficulty) {
-      return (difficulty != null) ? difficulty.ordinal() : null;
-    }
-
-    @TypeConverter
-    public static Difficulty integerToDifficulty(Integer integer) {
-      return (integer != null) ? Difficulty.values()[integer] : null;
-    }
+  public int getCompleted() {
+    return completed;
   }
 
-    public Difficulty difficultyname() {
-      Difficulty[] values = Difficulty.values();
-      return values[getDifficulty().ordinal()];
-    }
+  public void setCompleted(int completed) {
+    this.completed = completed;
+  }
 }
-

@@ -47,9 +47,9 @@ public interface GameDao {
   @Query("SELECT * FROM game WHERE game_id = :gameId")
   LiveData<GameDao> select(long gameId);
 
-  @Query("SELECT * FROM game_summary WHERE pool_size = :poolSize AND length = :length ORDER BY guess_count ASC")
+  @Query("SELECT * FROM game WHERE pool_size = :poolSize AND length = :length ORDER BY guess_count ASC")
   LiveData<List<GameDao>> selectSummariesByGuessCount(int poolSize, int length);
 
-  @Query("SELECT * FROM game_summary WHERE pool_size = :poolSize AND length = :length ORDER BY total_time ASC")
+  @Query("SELECT * FROM game WHERE pool_size = :poolSize AND length = :length ORDER BY total_time ASC")
   LiveData<List<GameDao>> selectSummariesByTotalTime(int poolSize, int length);
 
