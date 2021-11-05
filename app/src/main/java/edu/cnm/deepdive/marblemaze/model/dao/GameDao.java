@@ -1,4 +1,3 @@
-
 package edu.cnm.deepdive.marblemaze.model.dao;
 
 import androidx.lifecycle.LiveData;
@@ -7,6 +6,7 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
+import edu.cnm.deepdive.marblemaze.model.entity.Game;
 import io.reactivex.Single;
 import java.util.Collection;
 import java.util.List;
@@ -15,41 +15,42 @@ import java.util.List;
 public interface GameDao {
 
   @Insert
-  Single<Long> insert(GameDao game);
+  Single<Long> insert(Game game);
 
   @Insert
-  Single<List<Long>> insert(GameDao... games);
+  Single<List<Long>> insert(Game... games);
 
   @Insert
-  Single<List<Long>> insert(Collection<GameDao> games);
+  Single<List<Long>> insert(Collection<Game> games);
 
   @Update
-  Single<Integer> update(GameDao game);
+  Single<Integer> update(Game game);
 
   @Update
-  Single<Integer> update(GameDao... games);
+  Single<Integer> update(Game... games);
 
   @Update
-  Single<Integer> update(Collection<GameDao> games);
+  Single<Integer> update(Collection<Game> games);
 
   @Delete
-  Single<Integer> delete(GameDao game);
+  Single<Integer> delete(Game game);
 
   @Delete
-  Single<Integer> delete(GameDao... games);
+  Single<Integer> delete(Game... games);
 
   @Delete
-  Single<Integer> delete(Collection<GameDao> games);
+  Single<Integer> delete(Collection<Game> games);
 
   @Query("SELECT * FROM game ORDER BY created DESC")
-  LiveData<List<GameDao>> selectAll();
+  LiveData<List<Game>> selectAll();
 
   @Query("SELECT * FROM game WHERE game_id = :gameId")
-  LiveData<GameDao> select(long gameId);
+  LiveData<GameWithGuesses> select(long gameId);
 
-  @Query("SELECT * FROM game WHERE pool_size = :poolSize AND length = :length ORDER BY guess_count ASC")
-  LiveData<List<GameDao>> selectSummariesByGuessCount(int poolSize, int length);
+  @Query("SELECT * FROM game_summary WHERE pool_size = :poolSize AND length = :length ORDER BY guess_count ASC")
+  LiveData<List<GameSummary>> selectSummariesByGuessCount(int poolSize, int length);
 
-  @Query("SELECT * FROM game WHERE pool_size = :poolSize AND length = :length ORDER BY total_time ASC")
-  LiveData<List<GameDao>> selectSummariesByTotalTime(int poolSize, int length);
+  @Query("SELECT * FROM game_summary WHERE pool_size = :poolSize AND length = :length ORDER BY total_time ASC")
+  LiveData<List<GameSummary>> selectSummariesByTotalTime(int poolSize, int length);
 
+}
