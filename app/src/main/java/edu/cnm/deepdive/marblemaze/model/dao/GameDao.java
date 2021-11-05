@@ -47,4 +47,7 @@ public interface GameDao {
   @Query("SELECT * FROM game WHERE completed AND size = :size AND speed = :speed ORDER BY time ASC")
   LiveData<List<Game>> selectSummariesByTotalTime(int size, int speed);
 
+  @Query("SELECT * FROM game ORDER BY created DESC") //we named our table vaccine
+  LiveData<List<Game>> selectAll();
+
 }

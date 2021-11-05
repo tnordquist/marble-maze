@@ -3,10 +3,8 @@ package edu.cnm.deepdive.marblemaze.model.entity;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
-import androidx.room.Index;
 import androidx.room.PrimaryKey;
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
+import java.util.Date;
 
 @Entity(
     tableName = "game"
@@ -17,6 +15,9 @@ public class Game {
   @ColumnInfo(name = "game_id")
   private long id;
 
+  @NonNull
+  @ColumnInfo(index = true)
+  private Date created = new Date();
 
   @ColumnInfo(index = true)
   private int size;
@@ -30,6 +31,15 @@ public class Game {
 
   public void setId(long id) {
     this.id = id;
+  }
+
+  @NonNull
+  public Date getCreated() {
+    return created;
+  }
+
+  public void setCreated(@NonNull Date created) {
+    this.created = created;
   }
 
   public int getSize() {
