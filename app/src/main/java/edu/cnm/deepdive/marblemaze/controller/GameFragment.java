@@ -4,12 +4,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
+import edu.cnm.deepdive.marblemaze.adapter.GameAdapter;
 import edu.cnm.deepdive.marblemaze.databinding.FragmentGameBinding;
+import edu.cnm.deepdive.marblemaze.viewmodel.GameViewModel;
 
 public class GameFragment extends Fragment {
 
@@ -24,7 +25,7 @@ public class GameFragment extends Fragment {
 
     binding = FragmentGameBinding.inflate(inflater, container, false);
     binding.addGame.setOnClickListener(
-        this::onClick
+        this::addGame
     );
 
     return binding.getRoot();
@@ -50,7 +51,7 @@ public class GameFragment extends Fragment {
     binding = null;
   }
 
-  private void onClick(View v) {
+  private void addGame(View v) {
     Navigation.findNavController(binding.getRoot())
         .navigate(GameFragmentDirections.openGame()); //generated for us from fragment
   }

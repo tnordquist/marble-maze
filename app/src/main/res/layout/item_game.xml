@@ -9,24 +9,31 @@
   android:background="?android:selectableItemBackground">
 
   <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/half_static_spacing"
+    android:id="@+id/created"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
+
+  <TextView
     android:id="@+id/size"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/half_static_spacing"
-    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/created"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toStartOf="@id/speed"
-    style="@style/TextAppearance.MaterialComponents.Headline5"
     tools:text="5"/>
 
   <TextView
     android:id="@+id/speed"
-    android:layout_width="wrap_content"
+    android:layout_width="0dp"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/half_static_spacing"
     app:layout_constraintBaseline_toBaselineOf="@id/size"
     app:layout_constraintStart_toEndOf="@id/size"
-    style="@style/TextAppearance.AppCompat.Body1"
+    app:layout_constraintEnd_toStartOf="@id/time"
     tools:text="1"/>
 
   <TextView
@@ -36,7 +43,7 @@
     android:layout_margin="@dimen/half_static_spacing"
     app:layout_constraintStart_toEndOf="@id/speed"
     app:layout_constraintBaseline_toBaselineOf="@id/size"
-    style="@style/TextAppearance.AppCompat.Body1"
+    app:layout_constraintEnd_toStartOf="@id/completed"
     tools:text="00:00"/>
 
   <TextView
@@ -47,7 +54,6 @@
     app:layout_constraintBaseline_toBaselineOf="@id/size"
     app:layout_constraintStart_toEndOf="@id/time"
     app:layout_constraintEnd_toEndOf="parent"
-    style="@style/TextAppearance.AppCompat.Body1"
     tools:text="True"/>
 
 

@@ -27,7 +27,7 @@
         android:id="@+id/size"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
+        android:inputType="number"
         android:hint="@string/size_hint"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -40,9 +40,9 @@
       android:src="@drawable/ic_check_black_24dp"
       app:tint="@color/submit"
       android:background="?android:selectableItemBackground"
-      app:layout_constraintTop_toTopOf="@id/speed_layout"
+      app:layout_constraintTop_toTopOf="@id/size_layout"
       app:layout_constraintEnd_toStartOf="@id/cancel"
-      app:layout_constraintBottom_toBottomOf="@id/speed_layout"
+      app:layout_constraintBottom_toBottomOf="@id/size_layout"
       android:text="@string/save_label"
       android:contentDescription="@string/save_label"/>
 
@@ -54,8 +54,8 @@
       android:src="@drawable/ic_close_black_24dp"
       app:tint="@color/cancel"
       android:background="?android:selectableItemBackground"
-      app:layout_constraintTop_toTopOf="@id/speed_layout"
-      app:layout_constraintBottom_toBottomOf="@id/speed_layout"
+      app:layout_constraintTop_toTopOf="@id/size_layout"
+      app:layout_constraintBottom_toBottomOf="@id/size_layout"
       app:layout_constraintEnd_toEndOf="parent"
       android:text="@string/cancel_label"
       android:contentDescription="@string/cancel_label"/>
@@ -67,7 +67,7 @@
       android:layout_margin="@dimen/half_dynamic_spacing"
       app:hintEnabled="true"
       app:hintAnimationEnabled="true"
-      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/size_layout"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintEnd_toStartOf="@id/save">
 
@@ -75,7 +75,7 @@
         android:id="@+id/speed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
+        android:inputType="number"
         android:hint="@string/speed_hint"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -87,7 +87,7 @@
       android:layout_margin="@dimen/half_dynamic_spacing"
       app:hintEnabled="true"
       app:hintAnimationEnabled="true"
-      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/speed_layout"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintEnd_toStartOf="@id/save">
 
@@ -95,30 +95,19 @@
         android:id="@+id/time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
+        android:inputType="number"
         android:hint="@string/time_hint"/>
 
     </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-      android:id="@+id/completed_layout"
-      android:layout_width="0dp"
+
+    <Switch
+      android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_margin="@dimen/half_dynamic_spacing"
-      app:hintEnabled="true"
-      app:hintAnimationEnabled="true"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintEnd_toStartOf="@id/save">
-
-      <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/completed"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:hint="@string/completed_hint"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
+      android:id="@+id/completed"
+      app:layout_constraintTop_toBottomOf="@id/time_layout"
+      app:layout_constraintEnd_toStartOf="@id/save"
+      android:text="@string/completed_hint"/>
 
   </androidx.constraintlayout.widget.ConstraintLayout>
 

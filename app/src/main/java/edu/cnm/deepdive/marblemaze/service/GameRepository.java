@@ -17,7 +17,7 @@ public class GameRepository {
 
   public GameRepository(Application context) {
     this.context = context;
-    gameDao = MarblemazeDatabase
+    gameDao = MarbleMazeDatabase
         .getInstance()
         .getGameDao();
   }

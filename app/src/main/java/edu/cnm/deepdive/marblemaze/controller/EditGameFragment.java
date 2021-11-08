@@ -40,10 +40,10 @@ public class EditGameFragment
     binding.completed.addTextChangedListener(this);
     binding.cancel.setOnClickListener((v) -> dismiss());
     binding.save.setOnClickListener((v) -> {
-      game.setSize(Integer.parseInt(binding.size.getText().toString()));
-      game.setSpeed(Integer.parseInt(binding.speed.getText().toString()));
-      game.setTime(Integer.parseInt(binding.time.getText().toString()));
-      game.setCompleted(Boolean.valueOf(binding.completed.getText().toString()));
+      game.setSize(Integer.parseInt(binding.size.getText().toString().trim()));
+      game.setSpeed(Integer.parseInt(binding.speed.getText().toString().trim()));
+      game.setTime(Integer.parseInt(binding.time.getText().toString().trim()));
+      game.setCompleted(binding.completed.isChecked());
       viewModel.save(game);
       dismiss();
     });

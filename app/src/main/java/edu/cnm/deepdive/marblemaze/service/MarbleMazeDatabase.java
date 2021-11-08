@@ -8,7 +8,7 @@ import androidx.room.TypeConverter;
 import androidx.room.TypeConverters;
 import edu.cnm.deepdive.marblemaze.model.dao.GameDao;
 import edu.cnm.deepdive.marblemaze.model.entity.Game;
-import edu.cnm.deepdive.marblemaze.service.MarblemazeDatabase.Converters;
+import edu.cnm.deepdive.marblemaze.service.MarbleMazeDatabase.Converters;
 import java.util.Date;
 
 @Database(
@@ -17,25 +17,25 @@ import java.util.Date;
     exportSchema = true
 )
 @TypeConverters({Converters.class})
-public abstract class MarblemazeDatabase extends RoomDatabase {
+public abstract class MarbleMazeDatabase extends RoomDatabase {
 
   private static Application context;
 
   public static void setContext(Application context) {
-    MarblemazeDatabase.context = context;
+    MarbleMazeDatabase.context = context;
   }
 
-  public static MarblemazeDatabase getInstance() {
-    return MarblemazeDatabase.InstanceHolder.INSTANCE;
+  public static MarbleMazeDatabase getInstance() {
+    return MarbleMazeDatabase.InstanceHolder.INSTANCE;
   }
 
   public abstract GameDao getGameDao();
 
   private static class InstanceHolder {
 
-    private static final MarblemazeDatabase INSTANCE =
+    private static final MarbleMazeDatabase INSTANCE =
         Room.databaseBuilder(context,
-                MarblemazeDatabase.class,
+                MarbleMazeDatabase.class,
                 "marblemaze-db")
             .build();
 

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import edu.cnm.deepdive.marblemaze.databinding.ItemGameBinding;
 import edu.cnm.deepdive.marblemaze.model.entity.Game;
 import java.text.DateFormat;
 import java.util.List;
@@ -15,7 +16,7 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.Holder> {
   private final DateFormat dateFormat;
   private final List<Game> games;
 
-  public GameAdapter(Context context, List<Game> Games) {
+  public GameAdapter(Context context, List<Game> games) {
     inflator = LayoutInflater.from(context);
     dateFormat = android.text.format.DateFormat.getDateFormat(context);
     this.games = games;
@@ -49,9 +50,11 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.Holder> {
     private void bind(int position) {
       //Use contents of model object to set contents of binding fields.
       Game game = games.get(position);
-      binding.subject.setText(game.getSubject());
-      binding.updated.setText(dateFormat.format(game.getUpdated()));
-      binding.text.setText(game.getText());
+      binding.size.setText(String.valueOf(game.getSize()));
+      binding.created.setText(dateFormat.format(game.getCreated()));
+      binding.speed.setText(String.valueOf(game.getSpeed()));
+      binding.time.setText(String.valueOf(game.getTime()));
+      binding.completed.setText(String.valueOf(game.isCompleted()));
     }
   }
 
