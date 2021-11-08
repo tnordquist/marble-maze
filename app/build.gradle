@@ -3,13 +3,13 @@ apply plugin: 'androidx.navigation.safeargs'
 
 android {
 
-    compileSdkVersion = 30
+    compileSdkVersion = 31
 
     defaultConfig {
 
         applicationId "edu.cnm.deepdive.marblemaze"
         minSdkVersion 26
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
 
@@ -56,7 +56,7 @@ dependencies {
     implementation "androidx.navigation:navigation-ui:$navigationVersion"
 
     // Lifecycle (LiveData and ViewModel) libraries
-    def lifecycleVersion = '2.3.1'
+    def lifecycleVersion = '2.4.0'
     implementation "androidx.lifecycle:lifecycle-runtime:$lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-livedata:$lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycleVersion"
@@ -76,7 +76,7 @@ dependencies {
     implementation "androidx.room:room-rxjava2:$roomVersion"
 
     // Gson (Google JSON parser) library
-    implementation 'com.google.code.gson:gson:2.8.8'
+    implementation 'com.google.code.gson:gson:2.8.9'
 
     // Retrofit (REST client) with ReactiveX & Gson integration
     def retrofitVersion = '2.9.0'
@@ -88,7 +88,7 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
 
     // OkHttp logging dependency
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.2'
 
     // Stetho (inspection) dependency
     implementation 'com.facebook.stetho:stetho:1.6.0'

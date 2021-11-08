@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.marblemaze.controller.ui.slideshow;
+package edu.cnm.deepdive.marblemaze.controller;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

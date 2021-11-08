@@ -50,10 +50,10 @@ public class GameViewModel
     return throwable;
   }
 
-  public void save(Game note) {
+  public void save(Game game) {
     pending.add(
         repository
-            .save(note)
+            .save(game)
             .subscribe(
                 (savedGame) -> {
                 },
