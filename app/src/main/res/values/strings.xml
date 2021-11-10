@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="add_game">Add game</string>
+  <string name="size_hint">Size Hint</string>
+  <string name="save_label">Save</string>
+  <string name="cancel_label">Cancel</string>
+  <string name="speed_hint">Speed Hint</string>
+  <string name="time_hint">Time Hint</string>
+  <string name="completed_hint">Completed Hint</string>
+</resources>
