@@ -2,7 +2,9 @@ package edu.cnm.deepdive.marblemaze;
 
 import android.app.Application;
 import com.facebook.stetho.Stetho;
+import edu.cnm.deepdive.marblemaze.service.GoogleSignInRepository;
 import edu.cnm.deepdive.marblemaze.service.MarbleMazeDatabase;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * Initializes (in the {@link #onCreate()} method) application-level resources. This class
@@ -16,6 +18,13 @@ public class MarbleMazeApplication extends Application {
     super.onCreate();
     Stetho.initializeWithDefaults(this);
     MarbleMazeDatabase.setContext(this);
+    GoogleSignInRepository.setContext(this);
+    MarbleMazeDatabase
+        .getInstance()
+        .getGameDao()
+        .delete()
+        .subscribeOn(Schedulers.io())
+        .subscribe();
   }
 
 }
