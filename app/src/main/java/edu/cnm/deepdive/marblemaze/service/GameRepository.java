@@ -1,14 +1,17 @@
 package edu.cnm.deepdive.marblemaze.service;
 
 import android.app.Application;
+import android.util.Log;
 import androidx.lifecycle.LiveData;
 import edu.cnm.deepdive.marblemaze.model.dao.GameDao;
 import edu.cnm.deepdive.marblemaze.model.entity.Game;
+import edu.cnm.deepdive.marblemaze.model.pojo.Maze;
 import io.reactivex.Completable;
 import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 public class GameRepository {
 
@@ -20,6 +23,9 @@ public class GameRepository {
     gameDao = MarbleMazeDatabase
         .getInstance()
         .getGameDao();
+    Log.d(getClass().getSimpleName(),"Starting Maze");
+    Maze maze = generateMaze(10, 10, new Random());
+    Log.d(getClass().getSimpleName(), maze.toString());
   }
 
   public LiveData<Game> get(long gameId) {
@@ -55,6 +61,10 @@ public class GameRepository {
             .delete(game)
             .ignoreElement()
             .subscribeOn(Schedulers.io());
+  }
+
+  private Maze generateMaze(int rows, int columns, Random rng) {
+    return new Maze(rows, columns, rng);
   }
 
 }
