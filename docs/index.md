@@ -27,17 +27,17 @@ The app will be capable of generating mazes with different sizes and difficultie
 So far the app is still in progress, The maze logic is created, however its display is still in progress. And the ball movement needs to start development. The google sign in & out, and the setting screen is completed.
 
 ## Technical requirements & dependencies
-# list of Android API versions and hardware:
+## list of Android API versions and hardware:
 Created on: HP ENVY Laptop 13-aq1xxx
 
 Emulator: Pixel 3a API 28
 
 Physical Device: Galaxy A20
 
-# 3rd party libraries
+## 3rd party libraries
 * Google Sign in
 
-# A list of Android permissions required to run the app:
+## A list of Android permissions required to run the app:
 * Devices motion
 
 ## Device/external services
