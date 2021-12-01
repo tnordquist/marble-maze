@@ -9,6 +9,7 @@ import edu.cnm.deepdive.marblemaze.model.pojo.Maze;
 import io.reactivex.Completable;
 import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
+import java.security.SecureRandom;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
@@ -17,15 +18,14 @@ public class GameRepository {
 
   private final Application context;
   private final GameDao gameDao;
+  private final Random rng;
 
   public GameRepository(Application context) {
     this.context = context;
     gameDao = MarbleMazeDatabase
         .getInstance()
         .getGameDao();
-    Log.d(getClass().getSimpleName(),"Starting Maze");
-    Maze maze = generateMaze(10, 10, new Random());
-    Log.d(getClass().getSimpleName(), maze.toString());
+    rng = new SecureRandom();
   }
 
   public LiveData<Game> get(long gameId) {
@@ -63,8 +63,10 @@ public class GameRepository {
             .subscribeOn(Schedulers.io());
   }
 
-  private Maze generateMaze(int rows, int columns, Random rng) {
-    return new Maze(rows, columns, rng);
+  public Single<Maze> generateMaze(int size) {
+    return Single
+        .fromCallable(() -> new Maze(size * 3, size * 5, rng))
+        .subscribeOn(Schedulers.computation());
   }
 
 }

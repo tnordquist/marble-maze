@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <integer name="maze_speed_pref_min">1</integer>
+  <integer name="maze_speed_pref_max">10</integer>
+  <integer name="maze_speed_pref_default">5</integer>
+  <integer name="maze_speed_pref_increment">1</integer>
+  <integer name="maze_size_pref_min">1</integer>
+  <integer name="maze_size_pref_max">10</integer>
+  <integer name="maze_size_pref_default">5</integer>
+  <integer name="maze_size_pref_increment">1</integer>
+</resources>

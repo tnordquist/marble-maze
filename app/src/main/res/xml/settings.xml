@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <SeekBarPreference
+    android:key="@string/maze_speed_pref_key"
+    app:min="@integer/maze_speed_pref_min"
+    android:max="@integer/maze_speed_pref_max"
+    android:defaultValue="@integer/maze_speed_pref_default"
+    app:seekBarIncrement="@integer/maze_speed_pref_increment"
+    app:showSeekBarValue="true"
+    android:title="@string/code_length_pref_title"/>
+
+  <SeekBarPreference
+    android:key="@string/maze_size_pref_key"
+    app:min="@integer/maze_size_pref_min"
+    android:max="@integer/maze_size_pref_max"
+    android:defaultValue="@integer/maze_size_pref_default"
+    app:seekBarIncrement="@integer/maze_size_pref_increment"
+    app:showSeekBarValue="true"
+    android:title="@string/maze_size_pref_title"/>
+
+</PreferenceScreen>
