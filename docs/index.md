@@ -1,3 +1,11 @@
+---
+title: Project Overview
+description: Summary of project functionality & intended users.
+menu: Overview
+order: 0
+---
+
+
 ## Project Description
 
 Marble maze is a game featuring tilt controls. Roll your Marble through increasingly challenging mazes. Choose your comfortable difficulty, or try creating your own with Freeplay mode. Roll fast for the high score spot, and play often for daily marbles!
@@ -19,14 +27,6 @@ Marble maze is a game featuring tilt controls. Roll your Marble through increasi
 * As a teacher who wants to entertain my class in modern ways, I want entertaining games so that I can preinstall them on school laptops.
 
 * As a Childcare giver, I want an app that I can trust for my client's kids to use so that I can be sure they're not abusing their technology.
-
-## Wireframe Diagram
-
-[![Wireframe diagram](images/wireframe.svg)](pdf/wireframe.pdf)
-
-## Entity-Relationship Diagram
-
-[![Erd Diagram](images/erd.svg)](pdf/erd.pdf)
 
 ## Device/external services
 
