@@ -1,40 +1,33 @@
-package edu.cnm.deepdive.marblemaze.controller;
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  package="edu.cnm.deepdive.marblemaze">
 
-import android.os.Bundle;
-import com.google.android.material.snackbar.Snackbar;
-import androidx.appcompat.app.AppCompatActivity;
-import android.view.View;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-import edu.cnm.deepdive.marblemaze.R;
-import edu.cnm.deepdive.marblemaze.databinding.ActivityMainBinding;
+  <application
+    android:allowBackup="false"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:name=".MarbleMazeApplication"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:supportsRtl="true"
+    android:theme="@style/AppTheme"
+    tools:ignore="AllowBackup">
+    <activity
+      android:name=".controller.MainActivity"
+      android:theme="@style/AppTheme.NoActionBar"/>
+    <activity
+      android:name=".controller.LoginActivity"
+      android:exported="true">
 
-public class MainActivity extends AppCompatActivity {
+      <intent-filter>
 
-  private AppBarConfiguration appBarConfiguration;
-  private ActivityMainBinding binding;
+        <!-- This element declares that this activity is the default (main) activity. -->
+        <action android:name="android.intent.action.MAIN"/>
 
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
 
-    binding = ActivityMainBinding.inflate(getLayoutInflater());
-    setContentView(binding.getRoot());
+    </activity>
+  </application>
 
-    NavController navController = Navigation.findNavController(this,
-        R.id.nav_host_fragment_content_main);
-    appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-    NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-
-  }
-
-  @Override
-  public boolean onSupportNavigateUp() {
-    NavController navController = Navigation.findNavController(this,
-        R.id.nav_host_fragment_content_main);
-    return NavigationUI.navigateUp(navController, appBarConfiguration)
-        || super.onSupportNavigateUp();
-  }
-}
+</manifest>

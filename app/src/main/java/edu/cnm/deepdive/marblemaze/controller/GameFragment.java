@@ -1,6 +1,7 @@
 package edu.cnm.deepdive.marblemaze.controller;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +44,12 @@ public class GameFragment extends Fragment {
           GameAdapter adapter = new GameAdapter(getContext(), games);
           binding.games.setAdapter(adapter);
         });
+    viewModel
+        .getMaze()
+        .observe(getViewLifecycleOwner(),(maze) -> {
+          Log.d(getClass().getSimpleName(), maze.toString());
+        });
+    viewModel.buildMaze(); // FIXME This is just here for testing
   }
 
   @Override

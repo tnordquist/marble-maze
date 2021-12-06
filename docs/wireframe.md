@@ -1,7 +1,7 @@
 ---
 title: Wireframe Diagram
 description: High-level view of user interaction & flow.
-menu Wireframe
+menu: Wireframe
 order: 10
 ---
 
